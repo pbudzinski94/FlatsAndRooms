@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using FlatAndRooms.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace FlatAndRooms
 {
@@ -36,6 +38,7 @@ namespace FlatAndRooms
         {
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
+            services.AddDbContext<FlatAndRoomsContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddMvc();
         }
