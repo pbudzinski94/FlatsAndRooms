@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace FlatAndRooms.Models
 {
-    public class UserPreference : IPreference
+    public class UserPreference
     {
-        public Guid UserPreferencesId { get; set; }
+        public Guid UserPreferenceId { get; set; }
         public string PreferenceDescription { get; set; }
         public User User { get; set; }
     }

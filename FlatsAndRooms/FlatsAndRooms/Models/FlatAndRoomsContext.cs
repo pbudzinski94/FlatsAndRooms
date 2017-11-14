@@ -8,6 +8,7 @@ namespace FlatAndRooms.Models
 {
     public class FlatAndRoomsContext : DbContext
     {
+        private static FlatAndRoomsContext flatAndRoomsContext;
         public DbSet<Equipment> Equipments { get; set; }
         public DbSet<EquipmentObjectToRent> EquipmentObjectToRents { get; set; }
         public DbSet<Location> Location { get; set; }
@@ -18,7 +19,21 @@ namespace FlatAndRooms.Models
 
         public FlatAndRoomsContext(DbContextOptions<FlatAndRoomsContext> options) : base(options)
         {
-
+            flatAndRoomsContext = this;
+        }
+        public FlatAndRoomsContext()
+        {
+            
+        }
+        public static FlatAndRoomsContext getThisContext()
+        {
+            return flatAndRoomsContext;
+        }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
+            var connection = @"Server=(localdb)\mssqllocaldb;Database=FlatAndRooms;Trusted_Connection=True;";
+            optionsBuilder.UseSqlServer(connection);
         }
     }
 }

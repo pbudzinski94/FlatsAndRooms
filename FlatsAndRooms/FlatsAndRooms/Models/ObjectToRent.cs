@@ -14,7 +14,9 @@ namespace FlatAndRooms.Models
         public int RoomsNumber { get; set; }
         public int Floor { get; set; }
         public User User { get; set; }
+        public Guid? UserId { get; set; }
         public Location Location { get; set; }
+        public Guid? LocationId { get; set; }
         IEnumerable<EquipmentObjectToRent> EquipmentObjectToRents { get; set; }
         public IEnumerable<UserPreference> UserPreference { get; set; }
     }
