@@ -12,9 +12,10 @@ using System;
 namespace FlatsAndRooms.Migrations
 {
     [DbContext(typeof(FlatAndRoomsContext))]
-    partial class FlatAndRoomsContextModelSnapshot : ModelSnapshot
+    [Migration("20171121230643_AddForeignKeysToAllEntities")]
+    partial class AddForeignKeysToAllEntities
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -10,5 +10,6 @@ namespace FlatAndRooms.Models
         public Guid UserPreferenceId { get; set; }
         public string PreferenceDescription { get; set; }
         public User User { get; set; }
+        public Guid UserId { get; set; }
     }
 }

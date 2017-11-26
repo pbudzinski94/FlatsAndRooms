@@ -10,6 +10,8 @@ namespace FlatAndRooms.Models
         public Guid EquipmentObjectToRentId { get; set; }
         public string EquipmentDescription { get; set; }
         public ObjectToRent ObjectToRent { get; set; }
+        public Guid ObjectToRentId { get; set; }
         public Equipment Equipment { get; set; }
+        public Guid EquipmentId { get; set; }
     }
 }

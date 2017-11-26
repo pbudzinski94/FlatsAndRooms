@@ -10,5 +10,6 @@ namespace FlatAndRooms.Models
         public Guid ObjectToRentPreferenceId { get; set; }
         public string PreferenceDescription { get; set; }
         public ObjectToRent ObjectToRent { get; set; }
+        public Guid ObjectToRentId { get; set; }
     }
 }

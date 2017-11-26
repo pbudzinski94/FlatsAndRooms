@@ -25,15 +25,6 @@ namespace FlatsAndRooms.Services
             }
             return userVMs;
         }
-        public void AddFewUsersToDatabase(IEnumerable<UserVM> users)
-        {
-            List<User> temp = new List<User>();
-            foreach (var item in users)
-            {
-                temp.Add(MapUserVMToUser(item));
-            }
-            userRepository.Create(temp);
-        }
         private UserVM MapUserToUserVM(User user)
         {
             return new UserVM() { EMail = user.EMail, NickName = user.NickName, PhoneNumber = user.PhoneNumber, UserId = user.UserId };
@@ -43,5 +34,6 @@ namespace FlatsAndRooms.Services
             Guid guid = (user.UserId != null) ? user.UserId : Guid.NewGuid();
             return new User() { EMail = user.EMail, NickName = user.NickName, PhoneNumber = user.PhoneNumber, UserId = guid };
         }
+
     }
 }
