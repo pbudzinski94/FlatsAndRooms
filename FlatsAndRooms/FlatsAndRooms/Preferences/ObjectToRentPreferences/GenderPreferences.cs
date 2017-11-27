@@ -13,12 +13,16 @@ namespace FlatsAndRooms.Preferences.ObjectToRentPreferences
         public string Type { get { return "GenderPreferences"; } }
         public Gender Gender { get; set; }
 
+        public bool IsPersonIsRight(User user)
+        {
+            throw new NotImplementedException();
+        }
+
         public void MapFromUserPreference(ObjectToRentPreference objectToRentPreference)
         {
             GenderPreferences temp = JsonConvert.DeserializeObject<GenderPreferences>(objectToRentPreference.PreferenceDescription);
             this.Gender = temp.Gender;
         }
-
         public ObjectToRentPreference MapToUserPreference()
         {
             return new ObjectToRentPreference { PreferenceDescription = JsonConvert.SerializeObject(this) };

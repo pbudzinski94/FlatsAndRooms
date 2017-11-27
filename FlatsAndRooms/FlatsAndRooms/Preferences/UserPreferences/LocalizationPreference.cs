@@ -16,6 +16,11 @@ namespace FlatsAndRooms.Preferences.ObjectToRentPreferences
 
         public float PreferedDistance { get; set; }
 
+        public bool IsObjectToRentIsGood(ObjectToRent objectToRent)
+        {
+            throw new NotImplementedException();
+        }
+
         public void MapFromUserPreference(UserPreference objectToRentPreference)
         {
             LocalizationPreference temp = JsonConvert.DeserializeObject<LocalizationPreference>(objectToRentPreference.PreferenceDescription);

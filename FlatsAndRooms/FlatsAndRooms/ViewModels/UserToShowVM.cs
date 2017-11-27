@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace FlatsAndRooms.ViewModels
 {
-    public class UserVM
+    public class UserToShowVM
     {
         public Guid UserId { get; set; }
         public string NickName { get; set; }

@@ -11,5 +11,6 @@ namespace FlatsAndRooms.Preferences.ObjectToRentPreferences.Abstract
         string Type { get; }
         UserPreference MapToUserPreference();
         void MapFromUserPreference(UserPreference userPreferences);
+        bool IsObjectToRentIsGood(ObjectToRent objectToRent);
     }
 }
