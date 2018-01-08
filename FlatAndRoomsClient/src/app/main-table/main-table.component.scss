@@ -1,0 +1,11 @@
+@mixin container($width) {
+  float: left;
+  width: $width;
+}
+
+.title-container {
+  @include container(80%);
+}
+.prize-container {
+  @include container(20%);
+}

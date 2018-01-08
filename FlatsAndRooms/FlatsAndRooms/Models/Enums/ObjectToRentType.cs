@@ -7,6 +7,6 @@ namespace FlatAndRooms.Models.Enums
 {
     public enum ObjectToRentType
     {
-        Flat, Room, PlaceInFlat, PlaceInRoom
+        Flat, Room
     }
 }

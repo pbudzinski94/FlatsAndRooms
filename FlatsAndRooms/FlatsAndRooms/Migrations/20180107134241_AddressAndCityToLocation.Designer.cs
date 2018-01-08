@@ -12,9 +12,10 @@ using System;
 namespace FlatsAndRooms.Migrations
 {
     [DbContext(typeof(FlatAndRoomsContext))]
-    partial class FlatAndRoomsContextModelSnapshot : ModelSnapshot
+    [Migration("20180107134241_AddressAndCityToLocation")]
+    partial class AddressAndCityToLocation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -81,10 +82,6 @@ namespace FlatsAndRooms.Migrations
                     b.Property<int>("Floor");
 
                     b.Property<Guid?>("LocationId");
-
-                    b.Property<int>("PeopleNumber");
-
-                    b.Property<double>("Prize");
 
                     b.Property<int>("RoomsNumber");
 
@@ -163,7 +160,7 @@ namespace FlatsAndRooms.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("FlatAndRooms.Models.ObjectToRent", "ObjectToRent")
-                        .WithMany("EquipmentObjectToRents")
+                        .WithMany()
                         .HasForeignKey("ObjectToRentId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

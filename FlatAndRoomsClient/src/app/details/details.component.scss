@@ -1,0 +1,11 @@
+@mixin container($width) {
+  float: left;
+  width: $width;
+}
+
+.details-description{
+  @include container(80%);
+}
+.details-other {
+  @include container(20%);
+}

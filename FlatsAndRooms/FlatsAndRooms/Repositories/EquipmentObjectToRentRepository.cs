@@ -8,8 +8,6 @@ namespace FlatsAndRooms.Repositories
 {
     public class EquipmentObjectToRentRepository : Repository<EquipmentObjectToRent>
     {
-        
-
         public override bool Create(EquipmentObjectToRent item)
         {
             try

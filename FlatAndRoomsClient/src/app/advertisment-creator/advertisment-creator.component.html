@@ -1,0 +1,41 @@
+<mat-form-field>
+  <input matInput placeholder="City" [(ngModel)]="city" (change)="onChange()">
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="Postal code" [(ngModel)]="postalCode" (change)="onChange()">
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="Address" [(ngModel)]="adv.address">
+</mat-form-field>
+<mat-select placeholder="Type" [(ngModel)]="adv.type">
+  <mat-option [value]="0">flat</mat-option>
+  <mat-option [value]="1">room</mat-option>
+</mat-select>
+<mat-form-field>
+  <input matInput placeholder="Floor" [(ngModel)] = "adv.floor" type="number">
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="Prople number" [(ngModel)] = "adv.peopleNumber" type="number">
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="Prize per capita" [(ngModel)] = "adv.prize" type="number">
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="Rooms number" [(ngModel)] = "adv.roomsNumber" type="number">
+</mat-form-field>
+<div>
+  <button mat-raised-button (click)="AddEquipment()">AddEquipment</button>
+  <p>Equipments: </p>
+  <div class="equipment-container" *ngFor="let eq of adv.equipments; let i = index">
+    <mat-form-field>
+      <input matInput placeholder="Equipment" [(ngModel)]="adv.equipments[i].name">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Equipment description" [(ngModel)]="adv.equipments[i].description">
+    </mat-form-field>
+  </div>
+  <button mat-raised-button (click)="AddEquipment()">AddEquipment</button>
+</div>
+
+<button mat-raised-button (click)="Send()">Send</button>
+{{adv | json}}

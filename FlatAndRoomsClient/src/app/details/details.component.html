@@ -1,0 +1,24 @@
+<div class="main-details-adv" *ngIf="adv">
+  <div class="details-description">
+    <mat-card>
+        {{adv.description}}
+    </mat-card>
+  </div>
+  <div class="details-other">
+    <mat-card>
+      <h3>{{adv.prize}}</h3>
+    </mat-card>
+    <mat-card>
+      {{adv.address}}
+    </mat-card>
+    <mat-card>
+     Email: {{adv.email}}
+    </mat-card>
+    <mat-card>
+      Phone: {{adv.phone}}
+     </mat-card>
+     <mat-card>
+      Advertisment was added: {{adv.addDate | date: "dd-MM-yyyy HH:mm" }}
+     </mat-card>
+  </div>
+</div>

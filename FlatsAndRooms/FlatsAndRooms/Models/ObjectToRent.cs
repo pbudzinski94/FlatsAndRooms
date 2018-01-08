@@ -13,11 +13,13 @@ namespace FlatAndRooms.Models
         public ObjectToRentType Type { get; set; }
         public int RoomsNumber { get; set; }
         public int Floor { get; set; }
+        public double Prize { get; set; }
+        public int PeopleNumber { get; set; }
         public User User { get; set; }
         public Guid? UserId { get; set; }
         public Location Location { get; set; }
         public Guid? LocationId { get; set; }
-        IEnumerable<EquipmentObjectToRent> EquipmentObjectToRents { get; set; }
+        public IEnumerable<EquipmentObjectToRent> EquipmentObjectToRents { get; set; }
         public IEnumerable<UserPreference> UserPreference { get; set; }
     }
 }

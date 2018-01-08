@@ -1,0 +1,16 @@
+<div *ngFor="let x of ads">
+    <div class="title-container">
+          <h3>
+              <a [routerLink]="['/details', x.id ]">{{x.title}}</a>
+            </h3>
+            <p>{{x.peopleNumber}}-bed {{x.type == Type.Flat?'Flat':'Room'}}</p>
+            <p>{{x.addDate | date: "dd-MM-yyyy HH:mm"}}</p>
+
+      </div>
+
+      <div class="prize-container">
+
+              <h1>{{x.prize}}</h1>
+
+      </div>
+</div>
